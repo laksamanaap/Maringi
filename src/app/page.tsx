@@ -12,6 +12,7 @@ const dummyQuestions: Question[] = [
   { id: "1", question: "Apa kabar", answer: "Piye kabare" },
   { id: "2", question: "Selamat pagi", answer: "Sugeng enjing" },
   { id: "3", question: "Tidak tahu", answer: "Mboten Ngertos" },
+  { id: "3", question: "Tidak tahu", answer: "Mboten Ngertos" },
 ];
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
     };
 
     recognition.onresult = (event: SpeechRecognitionEvent) => {
+
+      console.log(event.results, "ON RESULT EVENT")
+
       let finalTranscript = '';
       let interimTranscript = '';
 
