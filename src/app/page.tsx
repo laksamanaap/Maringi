@@ -9,7 +9,7 @@ interface Question {
 }
 
 const dummyQuestions: Question[] = [
-  { id: "1", question: "Apa kabar", answer: "Piye kabare" },
+  { id: "1", question: "Apa kabar", answer: "PiyE kabare" },
   { id: "2", question: "Selamat pagi", answer: "Sugeng enjing" },
   { id: "3", question: "Tidak tahu", answer: "Mboten Ngertos" },
   { id: "3", question: "Tidak tahu", answer: "Mboten Ngertos" },
@@ -52,7 +52,7 @@ function App() {
 
     recognition.onresult = (event: SpeechRecognitionEvent) => {
 
-      console.log(event.results, "ON RESULT EVENT")
+      // console.log(event.results, "ON RESULT EVENT")
 
       let finalTranscript = '';
       let interimTranscript = '';
@@ -99,8 +99,8 @@ function App() {
     const normalizedUserAnswer = userAnswer.trim().toLowerCase();
     const normalizedCorrectAnswer = currentQuestion.answer.trim().toLowerCase();
 
-    console.log(
-      `User Answer: ${normalizedUserAnswer}, Correct Answer: ${normalizedCorrectAnswer}`)
+    // console.log(
+    //   `User Answer: ${normalizedUserAnswer}, Correct Answer: ${normalizedCorrectAnswer}`)
 
     if (normalizedUserAnswer === normalizedCorrectAnswer) {
       setScore(prevScore => prevScore + 1);
@@ -249,6 +249,7 @@ function App() {
             Skor: {score}/{dummyQuestions.length}
           </p>
         </div>
+
       </div>
     </div>
   );
